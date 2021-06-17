@@ -29,4 +29,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: gvabal/dud-gateway:latest
+          tags: |
+            gvabal/dud-gateway:${{ env.version }}
+            gvabal/dud-gateway:latest
