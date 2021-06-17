@@ -18,7 +18,12 @@ jobs:
         run: chmod +x gradlew
       - name: Assemble with Gradle
         run: ./gradlew assemble
-        
+
+      - name: Set variables
+        run: |
+          VER=$(cat VERSION)
+          echo "VERSION=$VER" >> $GITHUB_ENV
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -30,5 +35,5 @@ jobs:
           context: .
           push: true
           tags: |
-            gvabal/dud-gateway:${{ env.version }}
+            gvabal/dud-gateway:${{ env.VERSION }}
             gvabal/dud-gateway:latest
