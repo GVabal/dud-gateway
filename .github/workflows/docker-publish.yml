@@ -18,7 +18,7 @@ jobs:
         run: chmod +x gradlew
       - name: Assemble with Gradle
         run: ./gradlew assemble
-        
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -29,4 +29,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: gvabal/dud-gateway:latest
+          tags: |
+            gvabal/dud-gateway:latest

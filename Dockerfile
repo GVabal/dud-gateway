@@ -8,4 +8,4 @@ EXPOSE 8000
 
 ENTRYPOINT ["java","-jar","dud-gateway.jar"]
 
-#docker run -d -p 8000:8000 --rm --name dud-user-info dud-gateway:latest
+#docker run -d -p 8000:8000 --rm --name dud-gateway dud-gateway:latest
